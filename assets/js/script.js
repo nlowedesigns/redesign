@@ -29,6 +29,7 @@ $(document).ready(function(){
             $("#initials_container").click(function() {
                 $("#brand").show();
                 $("#brand").css("z-index", "12");
+                $("#drive").trigger("play");
             });
 
             $("#initials_container").hover(function(){
@@ -37,15 +38,6 @@ $(document).ready(function(){
             }, function() {
                 $(".initials").removeClass("hover_initials");
                 $("#home_container").css("background-color", "lightblue");
-            });
-
-            $("#foreground").hover(function(){
-                $("#design").delay(2000).animate({
-                    opacity: 1,
-            })
-                $("#professional").delay(4000).animate({
-                    opacity: 1,
-            })
             }, function() {
 
             });
@@ -54,6 +46,7 @@ $(document).ready(function(){
             //run portrait script
         };
     }); 
+
 // brand video
     $("video").on("ended",function(){
         $("#brand").hide();
@@ -148,7 +141,7 @@ $(document).ready(function(){
         $(".carousel_nav:nth-child(8)").hide("slow");
         $(".carousel_nav:nth-child(7)").hide("slow");
         $(".carousel_nav:nth-child(6)").hide("slow");
-        $("#carousel_nav_container").css("width", "15vw");
+        $("#carousel_nav_container").css("width", "14vw");
         $(".carousel").css("left", "0");
     });
     $("#pen").click(function() {
@@ -191,11 +184,29 @@ $(document).ready(function(){
         $(this).removeClass("button_hover");
     });
 
-     $(".download").hover(function(){
+     $(".button").hover(function(){
         $(this).css("opacity", ".6");
         $(this).addClass("button_hover");
     }, function() {
         $(this).css("opacity", "1");
         $(this).removeClass("button_hover");
+    });
+
+    var thumbnail =$(".thumbnail");
+    thumbnail.click(function(){
+        $("#overlay_container").show();
+        $("#carousel_view").css("overflow", "visible");
+        $(this).siblings().addClass("pic_click");
+        $(this).siblings().show();
+        return false;
+    });
+
+    $("#overlay, #x").click(function(){
+        $("#overlay_container").hide();
+        $(".square", ".photo_container").hide();
+        $(".photo", ".photo_container").hide();
+        $(".tall_photo", ".photo_container").hide();
+        $("#carousel_view").css("overflow", "hidden");
+        return false;
     });
 });
