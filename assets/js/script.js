@@ -138,14 +138,14 @@ $(document).ready(function(){
     });
 
     $("#camera").hover(function(){
-        $(".hover_tag:nth-child(4)").css("opacity", "1");
+        $(".hover_tag:nth-child(20)").css("opacity", "1");
     }, function() {
-        $(".hover_tag:nth-child(4)").css("opacity", "0");
+        $(".hover_tag:nth-child(20)").css("opacity", "0");
     });
     $("#pen").hover(function(){
-        $(".hover_tag:nth-child(5)").css("opacity", "1");
+        $(".hover_tag:nth-child(21)").css("opacity", "1");
     }, function() {
-        $(".hover_tag:nth-child(5)").css("opacity", "0");
+        $(".hover_tag:nth-child(21)").css("opacity", "0");
     });
 
     $("#camera").click(function() {
