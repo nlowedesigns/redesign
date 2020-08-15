@@ -927,12 +927,12 @@ a:nth-child(16) {
 	position: relative;
 	opacity: .5;
 }
-@media only screen and (orientation: landscape) {
+@media (hover: hover) and (pointer: fine) {
 	a:nth-child(16) {
 		display: none;
 	}
 }
-@media only screen and (orientation: portrait) {
+@media (hover: none) and (pointer: coarse) {
 	.library {
 		opacity: 1;
 	}
