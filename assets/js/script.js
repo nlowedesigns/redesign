@@ -3,22 +3,22 @@ $(document).ready(function(){
     $("#home").click(function() {
         $("html, body").animate({
             scrollTop: $("#home_container").offset().top
-        }, 1000)
+        }, 500)
     });
     $("#about").click(function() {
         $("html, body").animate({
             scrollTop: $("#about_container").offset().top
-        }, 1000)
+        }, 500)
     });
     $("#resume").click(function() {
         $("html, body").animate({
             scrollTop: $("#resume_container").offset().top
-        }, 1000)
+        }, 500)
     });
     $("#portfolio").click(function() {
         $("html, body").animate({
             scrollTop: $("#portfolio_container").offset().top
-        }, 1000)
+        }, 500)
     });
 // landscape vs portrait
     $(window).on("resize load", function() {
@@ -29,7 +29,6 @@ $(document).ready(function(){
             $(".initials_container").click(function() {
                 $("#discovery").show();
                 $("#discovery").css("z-index", "12");
-                $("#drive").trigger("play");
             });
 
             $(".initials_container").hover(function(){
@@ -38,7 +37,7 @@ $(document).ready(function(){
                 $(".hover_tag").css("opacity", "1");
             }, function() {
                 $(".initials").removeClass("hover_initials");
-                $("#home_container").css("background-color", "lightblue");
+                $("#home_container").css("background-color", "#4E9DDE");
                 $(".hover_tag").css("opacity", "0");
             }, function() {
 
@@ -54,19 +53,14 @@ $(document).ready(function(){
         $("#discovery").hide();
         $("#discovery").css("z-index", "10");
     });
-
     $("video").click(function() {
         $("#discovery").hide();
         $("#discovery").css("z-index", "10");
+        $("#drive").hide();
     });
-
     $("#my_story").click(function() {
         $("#drive").show();
         $("#drive").css("z-index", "12");
-    });
-    $("#drive").click(function() {
-        $(this).hide();
-        $("#drive").css("z-index", "10");
     });
 
 // navigation
@@ -104,6 +98,59 @@ $(document).ready(function(){
         });
     });
 
+    $("#chevron_container, .nav").hover(function(){
+        $("#nav_menu").css("bottom", "0");
+    }, function() {
+        $("#nav_menu").css("bottom", "-400px");
+    });
+
+// resume
+    $(".hover_box:nth-child(13)").hover(function(){
+        $(".library").delay(500).animate({
+            opacity: 1,
+            }, 1000);
+        $("#title").delay(4000).animate({
+            opacity: 0,
+            }, 1000);
+    }, function() {
+    });
+    $(".hover_box:nth-child(14)").hover(function(){
+        $("#design").animate({
+            opacity: 1,
+            }, 500);
+    }, function() {
+    });
+    $(".hover_box:nth-child(15)").hover(function(){
+        $("#professional").animate({
+            opacity: 1,
+            }, 500);
+    }, function() {
+    });
+    $(".hover_box:nth-child(16)").hover(function(){
+        $(".resume_background:nth-child(13)").delay(0).animate({
+            left: "29.5vw",
+            top: "-6vw",
+            }, 1000);
+        $(".resume_background:nth-child(14)").delay(1000).animate({
+            left: "-15vw",
+            bottom: "10vw;",
+            }, 1000);
+    }, function() {
+    });
+    $(".hover_box:nth-child(17)").hover(function(){
+        $(".background_position:nth-child(13)").delay(0).animate({
+            left: "19vw",
+            top: "4vw",
+            opacity: "1",
+            }, 1000);
+        $(".background_position:nth-child(14)").delay(500).animate({
+            left: "-10vw",
+            top: "30vw",
+            opacity: "1",
+            }, 1000);
+    }, function() {
+    });
+ 
 // portfolio
     $(".carousel_nav").click(function() {
         $(".carousel_nav").css("background-color", "rgb(60, 90, 152)");
@@ -183,10 +230,6 @@ $(document).ready(function(){
                }
        $("#chevron_container").data("clicks", !clicks);
     });
-
-    $("#title").delay(6500).animate({
-        opacity: 0,
-    }, 1500);
 
     $(".icon").hover(function(){
         $(this).css("opacity", ".6");
