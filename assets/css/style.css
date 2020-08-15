@@ -150,7 +150,7 @@ body::-webkit-scrollbar {
 	height: 50vw;
 	position: relative;	
 	background-color: #fefcfe;
-	display: flex;
+	overflow: hidden;
 }
 
 #about_content {
@@ -246,7 +246,7 @@ body::-webkit-scrollbar {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	height: 120%;
+	height: 100%;
 	display: none;
 	z-index: 10;
 }
